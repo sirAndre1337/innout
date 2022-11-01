@@ -29,6 +29,7 @@
                         type="email"
                         name="email"
                         id="email"
+                        value="<?= $email ?>"
                         class="form-control"
                         placeholder="Informe o e-mail">
                 </div>
