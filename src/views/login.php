@@ -30,9 +30,12 @@
                         type="email"
                         name="email"
                         id="email"
+                        class="form-control <?= $errors['email'] ? 'is-invalid' : ''?>"
                         value="<?= $email ?>"
-                        class="form-control"
                         placeholder="Informe o e-mail">
+                        <div class="invalid-feedback">
+                            <?= $errors['email'] ?>
+                        </div>
                 </div>
                 <div class="form-group">
                     <label for="password">Senha</label>
@@ -40,8 +43,11 @@
                         type="password"
                         name="password"
                         id="password"
-                        class="form-control"
+                        class="form-control <?= $errors['password'] ? 'is-invalid' : ''?>"
                         placeholder="Informe a senha">
+                        <div class="invalid-feedback">
+                            <?= $errors['password'] ?>
+                        </div>
                 </div>
             </div>
             <div class="card-footer d-flex justify-content-end">
