@@ -13,11 +13,11 @@
 <body>
     <header class="header">
         <div class="logo">
-                <i class="icofont-travelling"></i>
+                <i class="icofont-travelling mr-2"></i>
                     <span class="font-weight-light">In </span>
-                    <span class="font-weight-bold">N'</span>
+                    <span class="font-weight-bold mx-2">N'</span>
                     <span class="font-weight-light">Out</span>
-                <i class="icofont-runner-alt-1"></i>
+                <i class="icofont-runner-alt-1 ml-2"></i>
         </div>
         <div class="menu-toggle mx-3">
            <i class="icofont-navigation-menu"></i> 
