@@ -47,6 +47,17 @@ class WorkingHours extends Model {
         }
     }
 
+    public function getActiveClock() {
+        $nextTime = $this->getNextTime();
+        if($nextTime === 'time1' || $nextTime === 'time3') {
+            return 'exitTime';
+        } elseif($nextTime === 'time2' || $nextTime === 'time4') {
+            return 'workedInterval';
+        } else {
+            return null;
+        }
+    }
+
     // Calcular horas trabalhadas
     function getWorkedInterval() {
         [$t1, $t2, $t3, $t4] = $this->getTimes();
