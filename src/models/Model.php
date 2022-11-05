@@ -84,11 +84,20 @@ class Model {
      $sql = ' ';
      $firstRound = true;
      foreach($filters as $key => $value) {
-          if(!$firstRound){
-               $sql .= " AND";
+          if($key == 'raw') {
+               if(!$firstRound) {
+                    $sql .= " AND {$value}";
+               } else {
+                    $sql .= " {$value}";
+               }
+          } else {
+               if(!$firstRound){
+                    $sql .= " AND";
+               }
+               $firstRound = false;
+               $sql .= " {$key} = " . static::getFormatedValue($value) . " " ;
           }
-          $firstRound = false;
-          $sql .= " {$key} = " . static::getFormatedValue($value) . " " ;
+
      }
      return $sql;
    }
