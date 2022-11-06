@@ -69,3 +69,19 @@ function getTimeStringFromSeconds($seconds) {
     $s = $seconds - ($h * 3600) - ($m * 60);
     return sprintf('%02d:%02d:%02d', $h, $m, $s);
 }
+
+function formatDateWithLocale($date, $pattern) {
+    $time = getDateAsDateTime($date)->getTimestamp();
+    return strftime($pattern, $time);
+}
+
+function fomartDateToUtf($string) {
+    if (strpos($string, 'ter') !== false || strpos($string, 'bado') !== false) {
+         $test = explode("," , $string);
+         if(strpos($string, 'ter') !== false) $test[0] = "terça feira,";
+         if(strpos($string, 'bado') !== false) $test[0] = "sábado,";
+         return $test[0] . $test[1];
+    } else {
+        return $string;
+    }
+}
