@@ -76,11 +76,17 @@ function formatDateWithLocale($date, $pattern) {
 }
 
 function fomartDateToUtf($string) {
-    if (strpos($string, 'ter') !== false || strpos($string, 'bado') !== false) {
-         $test = explode("," , $string);
-         if(strpos($string, 'ter') !== false) $test[0] = "terça feira,";
-         if(strpos($string, 'bado') !== false) $test[0] = "sábado,";
-         return $test[0] . $test[1];
+    if (strpos($string, 'ter') !== false || strpos($string, 'bado') !== false || strpos($string, 'mar') !== false) {
+        if(strpos($string, 'mar') !== false) {
+            $value = explode(" " , $string);
+            if(strpos($string, 'mar') !== false) $value[0] = "março de ";
+            return $value[0] . $value[2];
+        } else {
+            $value = explode("," , $string);
+             if(strpos($string, 'ter') !== false) $value[0] = "terça feira,";
+             if(strpos($string, 'bado') !== false) $value[0] = "sábado,";
+             return $value[0] . $value[1];
+        }
     } else {
         return $string;
     }
